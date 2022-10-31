@@ -1,24 +1,20 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-int main() {
 
-    
+int main() {
     int n;
+    int sum = 0;
+    int i = 0;
     cin >> n;
-    int array[n];
-    for(int i = 0; i < n; i++)
-    {
-        array[i] = rand() % 100;
-        cout << array[i] <<" ";
     
-        if( array[i] >= 10 && array[i] <= 20)
-        {
-            
-            cout <<"- " << "["<< array [i] * array[i] << "] This is number ";
-        }
+    while( i < n )
+    {
+        i++;
+      
+        sum = sum + i;
+        cout << sum << " ";
     }
+    
     return 0;
 }
-
