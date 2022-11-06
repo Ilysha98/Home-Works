@@ -1,33 +1,38 @@
 #include <iostream>
+int sumDigits(long long);
 
 int main() {
-    int number;
-    int max1 = 0;
-    int max2 = 0;
-   
-    
-    
+    long long number;
+    std::cout << "Input number: " << std::endl;
     std::cin >> number;
-    while((number < 10) || (number >= 100)){
-        std::cout << "Invalid input, please, try again..... " <<std::endl;
-        std::cin >> number;
-    }
-    
-   max1 = number % 10;
-    max2 = number / 10;
-    if(max1 > max2){
-        std::cout <<"Output max digit: " << " " << max1 << std::endl;
-    }
-    else{
-        if(max1 < max2){
-            std::cout <<"Output max digit: " << " " << max2 << std::endl;
+    while(number != 0)
+    {
+        if(number != 0)
+        {
+            if((number >= 1000) && (number < 10000))
+            {
+                if(sumDigits(number) == 15)
+                {
+                    std::cout << "Good number : " << number << " Sum Digits: " << sumDigits(number) <<std::endl;
+                    
+                }
+            }
         }
-        
-        if(max1 == max2){
-            std::cout << "They are equal" << std::endl;}
-        
-    }
-       
+        std:: cin >> number;
+     }
+    
+    
     
     return 0;
+}
+int sumDigits(long long N){
+    long long buf = N;
+    int res = 0;
+    while(buf > 0){
+        res = res + (buf % 10);
+        buf /= 10;
+    }
+
+    return res;
+    
 }
